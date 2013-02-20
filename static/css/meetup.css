@@ -6,6 +6,7 @@ header{
     background: #DFDFDF;
     top: 0px;
     left: 0px;
+    z-index: 100;
 }
     header input[type=text]{
         height: 30px;
