@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv=Content-type content="text/html; charset=utf-8">
+    <title>Meetup Graph Search</title>
+    <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/meetup.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script src="/static/js/mootools.js"></script>
+    <script src="/static/js/meetup.js"></script>
+    <script>
+        window.addEvent('domready', function(){
+            var form = document.getElement('form'),
+                stage = document.getElement('.content'),
+                meetup = new Meetup(form, stage);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <form action="/search" method="get">
+            <input type="text" name="search" placeholder="dont be creepy" />
+        </form>
+    </header>
+    <div class="content clearfix">
+        
+    </div>
+</body>
+</html>

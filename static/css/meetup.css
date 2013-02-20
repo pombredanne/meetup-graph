@@ -1,0 +1,48 @@
+header{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background: #DFDFDF;
+    top: 0px;
+    left: 0px;
+}
+    header input[type=text]{
+        height: 30px;
+        margin: 9px auto;
+        display: block;
+        border: none;
+        padding: 0px 10px;
+        width: 80%;
+    }
+.content{
+    width: 80%;
+    padding: 0px 10px;
+    margin: 0px auto;
+    position: relative;
+    top: 50px;
+}
+
+.node{
+    display: block;
+    width: 23%;
+    margin: 5px 1%;
+    float: left;
+    border: 1px solid #DFDFDF;
+    text-align: center;
+    line-height: 2.5em;
+    font-size: 2.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+    .node.relationship_node{
+        width: 90%;
+        float: none;
+        margin: 5px auto;
+    }
+.relationship{
+    width: 70%;
+    margin: 5px auto;
+    line-height: 1.5em;
+    font-size: 1.5em;
+    text-align: center;
+}
