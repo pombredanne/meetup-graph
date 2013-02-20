@@ -15,7 +15,7 @@ neo = GraphDatabase('http://localhost:7474/db/data')
 name_index = neo.nodes.indexes.create('NAME', type='fulltext', provider='lucene')
 
 def get(id):
-    return neo.get(id)
+    return neo.nodes.get(id)
 
 def add(**kwargs):
     node = neo.nodes.create(**kwargs)

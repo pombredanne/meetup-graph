@@ -1,3 +1,21 @@
-<div class="detail">
-    
+<div class="detail clearfix">
+    <h1>About {{ node['name'] }}</h1>
+    <div class="third clearfix">
+        <h3>likes</h3>
+        {% for n in likes %}
+        <a href="/node/{{ n.id }}" class="node relationship_node">{{ n['name'] }}</a>
+        {% end %}
+    </div>
+    <div class="third clearfix">
+        <h3>dislikes</h3>
+        {% for n in dislikes %}
+        <a href="/node/{{ n.id }}" class="node relationship_node">{{ n['name'] }}</a>
+        {% end %}
+    </div>
+    <div class="third clearfix">
+        <h3>other</h3>
+        {% for n in others %}
+        <a href="/node/{{ n.id }}" class="node relationship_node">{{ n['name'] }}</a>
+        {% end %}
+    </div>
 </div>

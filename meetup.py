@@ -24,7 +24,7 @@ class Application(web.Application):
         routes = [
             (r'/', PageHandler),
             (r'/search', SearchHandler),
-            (r'/node(\d+)', NodeHandler),
+            (r'/node/(\d+)', NodeHandler),
         ]
         web.Application.__init__(self, routes, **settings)
 
@@ -36,9 +36,22 @@ class NodeHandler(web.RequestHandler):
     def get(self, node_id):
         node = util.get(node_id)
         others = []
-        
+        likes = []
+        dislikes = []
+
         if node:
-            others = [n for n in node.relationships.all()]
+            for rel in node.relationships.all():
+                if rel.end != node:
+                    if rel.type == 'likes':
+                        likes.append(rel.end)
+                    elif rel.type == 'dislikes':
+                        dislikes.append(rel.end)
+                    else:
+                        others.append(rel.end)
+        print likes, others
+        self.write({
+            'results': self.render_string('template/detail.html', node=node, others=others, likes=likes, dislikes=dislikes)
+        })
         
 class SearchHandler(web.RequestHandler):
     def get(self):

@@ -1,3 +1,4 @@
+
 header{
     position: fixed;
     height: 50px;
@@ -46,3 +47,13 @@ header{
     font-size: 1.5em;
     text-align: center;
 }
+
+.third{
+    width: 30%;
+    margin: 5px 1%;
+    float: left;
+}
+    .third .node.relationship_node{
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }

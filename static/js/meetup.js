@@ -12,6 +12,8 @@ var Meetup = new Class({
     },
     
     build: function(){
+        var self = this;
+        
         this.form.addEvent('submit', function(e){
             e.stop();
             
@@ -23,5 +25,17 @@ var Meetup = new Class({
                 }.bind(this))
                 .send(this.form);
         }.bind(this));
+        
+        this.stage.addEvent('click:relay(.node)', function(e){
+            e.stop();
+            
+            self.request.options.url = this.get('href');
+            self.request.options.mehtod = 'get';
+            self.request.removeEvents()
+                .addEvent('complete', function(resp){
+                    self.stage.set('html', resp['results'])
+                })
+                .send();
+        });
     }
 });
