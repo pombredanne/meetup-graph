@@ -37,5 +37,9 @@ var Meetup = new Class({
                 })
                 .send();
         });
+    },
+    
+    replaceStage: function(content){
+        this.stage.set('html', content);
     }
 });

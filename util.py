@@ -56,7 +56,7 @@ def degree(right, left, connection):
     r = Request()
     d = {
         "to" : "http://localhost:7474/db/data/node/%s" % end.id,
-        "max_depth" : 3,
+        "max_depth" : 30,
         "relationships" : {
             "type" : connection,
             "direction" : "out"
