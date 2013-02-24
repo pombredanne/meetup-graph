@@ -31,7 +31,8 @@ def search(connection, feels='likes'):
     lookup = Q('name', exact=connection)
     node = neo.nodes.filter(lookup)[-1]
     nodes = []
-    for rel in node.relationships.all():
+
+    for rel in node.relationships.all(types=[feels]):
         ends = [rel.start, rel.end]
         i = 0
         
